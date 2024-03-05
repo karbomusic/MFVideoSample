@@ -1,1 +1,1 @@
-C:\Users\kary\source\repos\VidCapCSharp\VidCapCSharp.csproj;x64
+C:\Users\kary\source\repos\MFVideoSample\VidCapCSharp.csproj;x64

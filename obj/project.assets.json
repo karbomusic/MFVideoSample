@@ -10262,11 +10262,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kary\\source\\repos\\VidCapCSharp\\VidCapCSharp.csproj",
+      "projectUniqueName": "C:\\Users\\kary\\source\\repos\\MFVideoSample\\VidCapCSharp.csproj",
       "projectName": "VidCapCSharp",
-      "projectPath": "C:\\Users\\kary\\source\\repos\\VidCapCSharp\\VidCapCSharp.csproj",
+      "projectPath": "C:\\Users\\kary\\source\\repos\\MFVideoSample\\VidCapCSharp.csproj",
       "packagesPath": "C:\\Users\\kary\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kary\\source\\repos\\VidCapCSharp\\obj\\",
+      "outputPath": "C:\\Users\\kary\\source\\repos\\MFVideoSample\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

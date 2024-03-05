@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Navigation;
 using System.Diagnostics;
 using Windows.Media.MediaProperties;
 using Windows.Storage.Streams;
+using static System.Net.Mime.MediaTypeNames;
+using System.Text.RegularExpressions;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -40,14 +42,15 @@ namespace VidCapCSharp
             this.InitializeComponent();
             Loaded += async (sender, args) =>
             {
+                await PrintMessage("Initializing camera...");
                 await InitializeCameraAsync();
 
                 // Grab a photo and save to Pictures library
-                Debug.WriteLine("Capturing and saving still image...");
+                await PrintMessage("Capturing and saving still image...");
                 await CapturePhotoAsync();
 
                 // Begin capturing a video stream, let it run for 10 seconds, then stop and save the stream
-                Debug.WriteLine("Capturing video for 10 seconds...");
+                await PrintMessage("Capturing video for 10 seconds...");
 
                 // Start the video capture
                 await StartVideoCaptureAsync();
@@ -60,13 +63,14 @@ namespace VidCapCSharp
                 if (mediaCapture.MediaCaptureSettings.ConcurrentRecordAndPhotoSupported)
                 {
                     // Device supports capturing photos while recording video
-                    Debug.WriteLine("Device supports concurrent video/photo capture. Capturing still...");
+                    await PrintMessage("Device supports concurrent video/photo capture. Capturing still...");
                     await CapturePhotoWhileRecordingAsync();
+                    await PrintMessage("Concurrent still image captured successfuly.");
                 }
                 else
                 {
                     // Device does not support capturing photos while recording video
-                    Debug.WriteLine("Device doesn't appear to support concurrent video/photo capture. No concurrent still captured.");
+                    await PrintMessage("Device doesn't appear to support concurrent video/photo capture. No concurrent still captured.");
                 }
                 //---------------------------------------------------------------------------
 
@@ -74,14 +78,18 @@ namespace VidCapCSharp
                 await Task.Delay(TimeSpan.FromSeconds(10));
 
                 // Stop the video capture
-                Debug.WriteLine("10-second duration complete, saving video...");
+                await PrintMessage("10-second duration complete, saving video...");
                 await StopVideoCaptureAsync();
-
-                Debug.WriteLine("Video save complete...");
-
+                await PrintMessage("Video save complete...");
 
             };
 
+        }
+
+        private async Task PrintMessage(string message)
+        {
+            Debug.WriteLine(message);
+            StatusTextBlock.Text += message + "\r\n";
         }
         private async Task InitializeCameraAsync()
         {
@@ -101,12 +109,12 @@ namespace VidCapCSharp
                 catch (UnauthorizedAccessException uex)
                 {
                     // User has denied access to the camera.
-                    Debug.WriteLine("Init failed: Access denied to camera! {0}", uex.Message);
+                    await PrintMessage("Init failed: Access denied to camera! " + uex.Message);
                 }
                 catch (Exception ex)
                 {
                     // Other initialization error has occurred.
-                    Debug.WriteLine("Init failed: {0}", ex.Message);
+                    await PrintMessage("Init failed: Access denied to camera! " + ex.Message);
                 }
             }
         }

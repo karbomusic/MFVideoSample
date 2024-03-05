@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SQ+cW6CRRTBAW7TxLqjb2+4Yz7bxwKvdF4YGP/UGLOhUfxDRXd/h1BfYkDiMDHu4de8GN6BRtf5qazAvsK4bZg==",
+  "dgSpecHash": "UzseVYQNeZGyODtYhhJyinFjQxbP4fNctDrkJ5WZSyRZ86NAf8q63fob65YPWIgVK5r0yKjSEKNywekOASOgzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kary\\source\\repos\\VidCapCSharp\\VidCapCSharp.csproj",
+  "projectFilePath": "C:\\Users\\kary\\source\\repos\\MFVideoSample\\VidCapCSharp.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.native.compiler\\2.2.12-rel-31116-00\\microsoft.net.native.compiler.2.2.12-rel-31116-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.uwpcoreruntimesdk\\2.2.14\\microsoft.net.uwpcoreruntimesdk.2.2.14.nupkg.sha512",
